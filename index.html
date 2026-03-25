@@ -2,145 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Game Hub</title>
+  <title>My Games</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
       margin: 0;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .controls {
-      text-align: center;
-      margin-bottom: 25px;
+    .game {
+      margin: 10px 0;
+      font-size: 20px;
     }
 
-    input, textarea {
-      padding: 8px;
-      margin: 5px;
-      border-radius: 6px;
-      border: none;
-      width: 200px;
+    a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid gray;
     }
 
-    textarea {
-      width: 420px;
-      height: 60px;
-      resize: none;
-    }
-
-    button {
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: none;
-      background: #22c55e;
-      color: black;
-      cursor: pointer;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1e293b;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 10px;
-    }
-
-    .card h3 {
-      margin: 0 0 5px 0;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #cbd5f5;
-      margin: 0;
+    a:hover {
+      color: #22c55e;
+      border-bottom: 1px solid #22c55e;
     }
   </style>
 </head>
 <body>
 
-<h1>🎮 My Game Hub</h1>
+<h1>My Games</h1>
 
-<div class="controls">
-  <br>
-  <input id="nameInput" placeholder="Game Name"><br>
-  <input id="imgInput" placeholder="Image URL"><br>
-  <textarea id="descInput" placeholder="Game Description"></textarea><br>
-  <button onclick="addGame()">Add Game</button>
+<!-- ADD YOUR GAMES HERE -->
+
+<div class="game">
+  <a href="https://yourgame1.com" target="_blank">Game Title 1</a>
 </div>
 
-<div class="grid" id="gameGrid"></div>
+<div class="game">
+  <a href="https://yourgame2.com" target="_blank">Game Title 2</a>
+</div>
 
-<script>
-  const games = [];
+<div class="game">
+  <a href="https://yourgame3.com" target="_blank">Game Title 3</a>
+</div>
 
-  function addGame() {
-    const name = document.getElementById('nameInput').value;
-    const img = document.getElementById('imgInput').value;
-    const desc = document.getElementById('descInput').value;
-
-    if (!name || !img || !desc) {
-      alert('Fill all fields');
-      return;
-    }
-
-    games.push({ name, img, desc });
-    renderGames();
-
-    document.getElementById('nameInput').value = '';
-    document.getElementById('imgInput').value = '';
-    document.getElementById('descInput').value = '';
-  }
-
-  function renderGames() {
-    const grid = document.getElementById('gameGrid');
-    grid.innerHTML = '';
-
-    games.forEach(game => {
-      const card = document.createElement('div');
-      card.className = 'card';
-
-      card.innerHTML = `
-        <img src="${game.img}" alt="${game.name}">
-        <div class="card-content">
-          <h3>${game.name}</h3>
-          <p>${game.desc}</p>
-        </div>
-      `;
-
-      grid.appendChild(card);
-    });
-  }
-</script>
+<!-- COPY & PASTE MORE ABOVE -->
 
 </body>
 </html>
